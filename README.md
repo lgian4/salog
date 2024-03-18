@@ -1,0 +1,2 @@
+# salog
+cli using rust
