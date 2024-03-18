@@ -1,7 +1,7 @@
 use log::trace;
 use std::{fs, io::Read, path::PathBuf};
 
-use crate::{
+use crate::processor::{
     log_entry::{LogEntry, LogLevel},
     log_processor_options::LogProcessorOptions,
     log_trait::GetLogTrait,

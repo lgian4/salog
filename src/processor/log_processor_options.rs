@@ -1,9 +1,8 @@
-use std::path::PathBuf;
-
 use chrono::{Duration, Local, Timelike};
 use serde::{Deserialize, Serialize};
+use std::path::PathBuf;
 
-use crate::{
+use super::{
     command::{Cli, InputCommand},
     log_entry::LogLevel,
 };
@@ -132,7 +131,7 @@ impl LogProcessorOptions {
             truncate_on_save,
             save,
             verbose,
-            level_filter
+            level_filter,
         })
     }
 }
@@ -140,7 +139,7 @@ impl LogProcessorOptions {
 fn parse_level_filter(level: &str) -> Result<Option<LogLevel>, String> {
     match level.to_lowercase().as_str() {
         "debug" | "deb" | "d" => Ok(Some(LogLevel::DEBUG)),
-        "error" | "err" | "e" | "errr" => Ok(Some(LogLevel::ERROR)),
+        "error" | "err" | "e" | "ror" => Ok(Some(LogLevel::ERROR)),
         "info" | "in" | "i" | "inf" => Ok(Some(LogLevel::INFO)),
         "none" | "non" | "n" | "no" => Ok(Some(LogLevel::NONE)),
         "warn" | "war" | "w" => Ok(Some(LogLevel::WARN)),

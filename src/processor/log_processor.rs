@@ -1,22 +1,8 @@
-use std::sync::OnceLock;
+use crate::processor::{get_log::{es_get::ESGetStrategy, file_get::FileGetStrategy, url_get::UrlGetStrategy}, log_processor_options::{LogInput, LogOutput, LogProcessorOptions, LogSave}, output_log::{count_output::CountOutputStrategy, json_output::JsonOutputStrategy, json_pretty_output::JsonPrettyOutputStrategy, summary_output::SummaryOutputStrategy}, save_log::{es_save::ESSaveStrategy, file_save::FileSaveStrategy}};
 
+use super::{command::Cli, db::EsClient, log_trait::{GetLogTrait, OutputLogTrait, SaveLogTrait}};
 use log::{debug, info};
-
-use crate::{
-    command::Cli,
-    count_output::CountOutputStrategy,
-    db::EsClient,
-    es_get::ESGetStrategy,
-    es_save::ESSaveStrategy,
-    file_get::FileGetStrategy,
-    file_save::FileSaveStrategy,
-    json_output::JsonOutputStrategy,
-    json_pretty_output::JsonPrettyOutputStrategy,
-    log_processor_options::{LogInput, LogOutput, LogProcessorOptions, LogSave},
-    log_trait::{GetLogTrait, OutputLogTrait, SaveLogTrait},
-    summary_output::SummaryOutputStrategy,
-    url_get::UrlGetStrategy,
-};
+use std::sync::OnceLock;
 
 pub struct LogProcessor {
     get_impl: Box<dyn GetLogTrait>,

@@ -4,11 +4,10 @@ use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 use tokio::runtime::Runtime;
 
-use crate::{
+use crate::processor::{
     db::EsClient,
     log_entry::{LogEntry, LogLevel},
-    log_processor_options::LogProcessorOptions,
-    log_trait::GetLogTrait,
+    log_processor_options::LogProcessorOptions, log_trait::GetLogTrait,
 };
 
 pub struct ESGetStrategy<'a> {

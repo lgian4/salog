@@ -1,4 +1,4 @@
-use crate::log_entry::LogEntry;
+use super::log_entry::LogEntry;
 
 pub trait GetLogTrait {
     fn get(&self) -> Result<Vec<LogEntry>, String>;

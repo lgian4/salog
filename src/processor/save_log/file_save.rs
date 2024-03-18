@@ -1,8 +1,5 @@
 use std::{fs, io::Write, path::PathBuf};
-
-use crate::{
-    log_entry::LogEntry, log_processor_options::LogProcessorOptions, log_trait::SaveLogTrait,
-};
+use crate::processor::{log_entry::LogEntry, log_processor_options::LogProcessorOptions, log_trait::SaveLogTrait};
 
 pub struct FileSaveStrategy {
     path: PathBuf,

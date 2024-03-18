@@ -1,4 +1,4 @@
-use crate::{log_entry::LogEntry, log_trait::OutputLogTrait};
+use crate::processor::{log_entry::LogEntry, log_trait::OutputLogTrait};
 
 pub struct JsonOutputStrategy;
 

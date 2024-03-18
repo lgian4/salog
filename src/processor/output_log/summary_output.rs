@@ -1,9 +1,7 @@
-use crate::{
-    log_entry::{HTTPMethod, LogEntry},
-    log_trait::OutputLogTrait,
-};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+
+use crate::processor::{log_entry::{HTTPMethod, LogEntry}, log_trait::OutputLogTrait};
 
 pub struct SummaryOutputStrategy;
 

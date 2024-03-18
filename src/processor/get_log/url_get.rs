@@ -1,10 +1,11 @@
-use crate::{
+use log::{debug, trace};
+use tokio::runtime::Runtime;
+
+use crate::processor::{
     log_entry::{LogEntry, LogLevel},
     log_processor_options::LogProcessorOptions,
     log_trait::GetLogTrait,
 };
-use log::{debug, trace};
-use tokio::runtime::Runtime;
 
 pub struct UrlGetStrategy {
     url: String,

@@ -3,10 +3,7 @@ use log::debug;
 use serde_json::{json, Value};
 use tokio::runtime::Runtime;
 
-use crate::{
-    db::EsClient, log_entry::LogEntry, log_processor_options::LogProcessorOptions,
-    log_trait::SaveLogTrait,
-};
+use crate::processor::{db::EsClient, log_entry::LogEntry, log_processor_options::LogProcessorOptions, log_trait::SaveLogTrait};
 
 pub struct ESSaveStrategy<'a> {
     index: String,
